@@ -12,7 +12,7 @@ import java.time.Duration;
 public class C01_BeforeAfterJUnit {
     WebDriver driver; //null
 
-
+    //Vor jeder Test führt aus
     @Before
     public void setUp(){
         WebDriverManager.chromedriver().setup();
@@ -21,7 +21,7 @@ public class C01_BeforeAfterJUnit {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
 
-
+    //Nach der jeder Test führt aus
     @After
     public void tearDown() throws InterruptedException {
         Thread.sleep(3000);
