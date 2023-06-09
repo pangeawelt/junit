@@ -76,8 +76,8 @@ public class C02_MavenClassWork {
         else System.out.println("TEST FAILED");
         /*
 
+Predicate= önerme,tahmin DEUTSCH=Prädikat
   Predicate<String> paymentSuccess = text -> text.contains("The payment was successfully submitted.");
-
 if (paymentSuccess.test(meldung.getText())) {
     System.out.println("TEST PASSED");
 } else {
@@ -86,7 +86,7 @@ if (paymentSuccess.test(meldung.getText())) {
 */
       //  System.out.println("TEST PASSED "+ meldung.getText().contains("The payment was successfully submitted."));
        // System.out.println("TEST FAILED "+ meldung.getText().contains("The payment was successfully submitted."));
-        //   driver.quit();
+           driver.quit();
     }
     }
 
