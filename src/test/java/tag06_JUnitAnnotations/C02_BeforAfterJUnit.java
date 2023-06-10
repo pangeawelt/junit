@@ -1,4 +1,4 @@
-package tag06;
+package tag06_JUnitAnnotations;
 
 import org.junit.After;
 import org.junit.Before;

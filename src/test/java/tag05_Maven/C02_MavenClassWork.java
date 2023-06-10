@@ -1,6 +1,7 @@
-package tag05;
+package tag05_Maven;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -70,10 +71,14 @@ public class C02_MavenClassWork {
         driver.findElement(By.xpath("//*[@id=\"pay_saved_payees\"]")).click();
         WebElement meldung=driver.findElement(By.xpath("//*[@id=\"alert_content\"]/span"));
 
-        if (meldung.getText().contains("The payment was successfully submitted.")) {
+    /*    if (meldung.getText().contains("The payment was successfully submitted.")) {
             System.out.println("TEST PASSED");
         }
-        else System.out.println("TEST FAILED");
+        else System.out.println("TEST FAILED");*/
+
+        assert meldung.getText().contains("The payment was successfully submitted.") : "TEST FAILED";
+        System.out.println("TEST PASSED");
+
         /*
 
 Predicate= önerme,tahmin DEUTSCH=Prädikat

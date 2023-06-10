@@ -20,3 +20,32 @@ Diese Annotationen helfen bei der Strukturierung und Ausführung von Tests und e
 DRY=DONT REPEAT YOURSELF
 
 WET= WRITE EVERTHING TWICE
+
+
+===========
+
+##Dropdown
+
+Select select = new Select(DropdownElement);
+
+##Iframe
+
+driver.switchTo().frame(iframeElement);
+driver.switchTo().parentFrame(); //parent Iframe gibt zurück
+driver.switchTo().newWindow(WindowType.WINDOW);
+
+##WindowHandle
+
+driver.getWindowHandle();
+driver.getWindowHandles();
+
+#öffnet neu Webseite im TAB
+
+driver.get("https://www.amazon.com");
+
+
+
+
+
+
+
