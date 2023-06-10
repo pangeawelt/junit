@@ -33,18 +33,18 @@ public class C01_ClassWorkCheckBox {
     @Test
     public void test01(){
         driver.get("https://the-internet.herokuapp.com/checkboxes");
-    WebElement checkbox1= driver.findElement(By.xpath("//input[@type='checkbox'][1]"));
-    WebElement checkbox2= driver.findElement(By.xpath("//input[@type='checkbox'][2]"));
 
-    //CheckBox klick
-        if (!checkbox1.isSelected()){
+        // // Abrufen der Webelemente für die Kontrollkästchen//checkboxes
+        WebElement checkbox1 = driver.findElement(By.xpath("//input[@type='checkbox'][1]"));
+        WebElement checkbox2 = driver.findElement(By.xpath("//input[@type='checkbox'][2]"));
+
+        // Prüfen Sie, ob die Kontrollkästchen nicht aktiviert sind, und aktivieren Sie sie dann.
+        if (!checkbox1.isSelected() || !checkbox2.isSelected()) {
             checkbox1.click();
         }
-        if (!checkbox2.isSelected()){
-            checkbox1.click();
-        }
 
-     //   System.out.println(checkbox1.isSelected());
+
+       //   System.out.println(checkbox1.isSelected());
        // System.out.println(checkbox2.isSelected());
 
 
@@ -54,7 +54,6 @@ public class C01_ClassWorkCheckBox {
 
     }
 
-    //https://the-internet.herokuapp.com/checkboxes
 
 
 
