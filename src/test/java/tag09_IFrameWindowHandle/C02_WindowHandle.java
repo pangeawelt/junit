@@ -4,13 +4,14 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.TastBase;
+import utils.TestBase;
+
 
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
 
-public class C02_WindowHandle extends TastBase {
+public class C02_WindowHandle extends TestBase {
     /*
 
 

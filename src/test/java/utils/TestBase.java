@@ -10,7 +10,11 @@ import static org.junit.Assert.assertEquals;
 
 import java.time.Duration;
 
-public abstract class TastBase {
+public abstract class TestBase {
+
+    // Wir möchten verhindern,dass ein Objekt von testBase zu erzuegen deswegen ABSTRACT
+    //
+
 
     protected static WebDriver driver;
 
@@ -25,8 +29,8 @@ public abstract class TastBase {
 
     @After
     public void tearDown() throws InterruptedException {
-        warte(3);
-        driver.quit();
+       warte(3);
+       driver.quit();
     }
 
     public static void warte(int sekunde) {

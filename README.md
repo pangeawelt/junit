@@ -43,7 +43,22 @@ driver.getWindowHandles();
 
 driver.get("https://www.amazon.com");
 
+##Allerts
+Simple Alert
+Confirmation Alert
+Prompt Alert
 
+accept( ) => Dasselbe wie das Klicken auf OK bei einer Meldung.
+driver.switchTo( ).alert( ).accept( );
+
+dismiss() => Entspricht dem Klicken auf Abbrechen bei einer Warnmeldung.
+driver.switchTo( ).alert( ).dismiss();
+
+●getText() => Zum Abrufen der Nachricht in einer Meldung.
+driver.switchTo( ).alert( ).getText();
+
+●sendKeys("Text") => So senden Sie Text an das Textfeld der Warnmeldung
+driver.switchTo( ).alert( ).sendKeys("Text");
 
 
 

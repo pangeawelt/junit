@@ -4,10 +4,13 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utils.TastBase;
+
+import utils.TestBase;
+
 import static org.junit.Assert.*;
 
-public class C01_IFrame extends TastBase {
+public class C01_IFrame extends TestBase {
+
 
     /*
     geht //https://the-internet.herokuapp.com/iframe
