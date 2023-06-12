@@ -21,7 +21,7 @@ public class DropDown_2 extends TestBase {
          */
     WebElement jahre = driver.findElement(By.xpath("//*[@id='year']"));
     Select select = new Select(jahre);
-        select.selectByIndex(5);//index beginnt = 0
+        select.selectByIndex(10);//index beginnt = 0
         warte(2);
     //jahre.sendKeys("2016");--> auch wahlen
     //driver.findElement(By.xpath("//*[@value='2016']")).click(); --> auch wahlen
