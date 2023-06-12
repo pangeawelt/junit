@@ -1,11 +1,9 @@
 package tag10_HandleAlerts;
 
 import org.junit.Assert;
-import org.junit.Assert.*;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import utils.TestBase;
+import utilities.TestBase;
 
 public class C01_Allert extends TestBase {
 /*Was ist eine Warnung/Allert? Ein Alert ist ein kleines Meldungsfeld,

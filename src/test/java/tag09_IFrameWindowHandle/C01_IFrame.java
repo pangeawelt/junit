@@ -1,11 +1,10 @@
 package tag09_IFrameWindowHandle;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import utils.TestBase;
+import utilities.TestBase;
 
 import static org.junit.Assert.*;
 
