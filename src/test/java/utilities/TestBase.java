@@ -11,6 +11,8 @@ import static org.junit.Assert.assertEquals;
 
 
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class TestBase {
 
@@ -85,8 +87,32 @@ public abstract class TestBase {
         Select select= new Select(ddm);
         select.selectByValue(value);
     }
+    //SwicthToWindow
+    public static void switchToWindow(int zahl){
+        List<String> allesWindowshandel= new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(allesWindowshandel.get(zahl));
 
+    }
 
+    //SwitchToWindow
+    /*Das heißt, der Zweck der Methode window(int zahl) besteht darin,
+    zwischen Fenstern mit dem angegebenen numerischen Index zu wechseln.*/
+    public static void window(int zahl){
+        driver.switchTo().window(driver.getWindowHandles().toArray()[zahl].toString());
+    }
+/*Die Methode switchToWindow(int zahl) sammelt zunächst die Bezeichner aller verfügbaren
+ Fenster in einem List-Objekt und schaltet dann zwischen den Fenstern
+  an dem mit der Methode get() angegebenen Index um.
+   Diese Methode erfordert ein wenig mehr Code,
+   um eine Liste der verfügbaren Fenster zu erstellen.
+
+Dagegen greift die Methode window(int zahl) direkt auf die Bezeichner der verfügbaren
+Fenster zu und wandelt sie mit der Methode toArray() in ein Array um.
+ Anschließend wird das Fenster in der angegebenen Reihenfolge ausgewählt
+ und mit der Methode toString() fokussiert.
+ Im Allgemeinen besteht der Unterschied zwischen diesen beiden Methoden darin, wie die verfügbaren Fenster gesammelt werden und welche Methode verwendet wird. Beide dienen
+ jedoch demselben grundlegenden Zweck
+ und können bei richtiger  Anwendung funktional sein.*/
 
 
 

@@ -60,7 +60,29 @@ driver.switchTo( ).alert( ).getText();
 ●sendKeys("Text") => So senden Sie Text an das Textfeld der Warnmeldung
 driver.switchTo( ).alert( ).sendKeys("Text");
 
+##Authentication
+Basic Authentication is an authentication method used on web servers
 
+##Cookies
+
+WEBSEITE->RECHTKLICK->UNTERSUCHEN->APP->COOKIES
+
+driver.manage().addCookie();;
+driver.manage().getCookies();
+driver.manage().deleteAllCookies();
+driver.manage().getCookieNamed();
+
+Was ist ein Cookie?
+Cookies sind Informationsdateien, 
+die vorübergehend im Browser angelegt werden.
+Cookies werden vorübergehend auf unserem Computer gespeichert.
+Cookies können eine Vielzahl von Informationen enthalten, 
+darunter auch persönliche Daten.  
+Websites können nur auf Informationen zugreifen, 
+die Sie autorisiert haben.  
+Diese Websites können nicht auf Informationen zugreifen,
+die Sie nicht angegeben haben,
+oder andere Dateien auf Ihrem Computer einsehen
 
 
 
