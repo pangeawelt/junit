@@ -85,4 +85,23 @@ die Sie nicht angegeben haben,
 oder andere Dateien auf Ihrem Computer einsehen
 
 
+##ActionsClass
+        Actions aktionen = new Actions(driver);
+        WebElement feld = driver.findElement(By.id("hot-spot"));
+        aktionen.contextClick(feld).perform();
+        actions.dragAndDrop(dragSource,dropTarget).perform();
+        actions.clickAndHold(dragSource).moveToElement(dropTarget).release().perform();
+        actions.clickAndHold(dragSource).moveByOffset(84,28).release().perform();
+
+//Verschiebt Webelement an die gewünschte Koordinate
+
+/*Mit Aktionen Klasse I Maus und Tastatur werden Operationen durchgeführt.
+2 Tipp ;
+##Mausbasierte Aktionen:
+Doppelklick, Rechtsklick, klicken und halten, ziehen und ablegen, über ein Element bewegen usw., scrollen.
+##Tastatur-basierte Aktionen:
+Umschalt-, Strg- und Alt-Tasten.
+Actions hat viele nützliche Maus- und Tastaturfunktionen*/
+
+
 

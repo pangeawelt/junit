@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -17,7 +18,6 @@ import java.util.List;
 public abstract class TestBase {
 
     // Wir möchten verhindern,dass ein Objekt von testBase zu erzuegen deswegen ABSTRACT
-    //
 
 
     protected static WebDriver driver;
@@ -33,8 +33,8 @@ public abstract class TestBase {
 
     @After
     public void tearDown() throws InterruptedException {
-       warte(3);
-       driver.quit();
+        warte(3);
+        driver.close();
     }
 
 
@@ -46,21 +46,24 @@ public abstract class TestBase {
             throw new RuntimeException(e);
         }
     }
+
     //Alert ACCEPT
-    public static void alertAccept(){
+    public static void alertAccept() {
         driver.switchTo().alert().accept();
     }
+
     //Alert DISMISS
-    public static void alertDismiss(){
+    public static void alertDismiss() {
         driver.switchTo().alert().dismiss();
     }
 
     //Alert getTEXT
-    public static void alertText(){
+    public static void alertText() {
         driver.switchTo().alert().getText();
     }
+
     //Alert promptBOX
-    public static void alertPrompt(String text){
+    public static void alertPrompt(String text) {
         driver.switchTo().alert().accept();
     }
 
@@ -70,26 +73,27 @@ public abstract class TestBase {
      * diese methode*/
 
     //DropDOWNMENU
-    public static void ddmVisibleText(WebElement ddm,String wahl){
-        Select select= new Select(ddm);
+    public static void ddmVisibleText(WebElement ddm, String wahl) {
+        Select select = new Select(ddm);
         select.selectByVisibleText(wahl);
     }
 
     //DropDownINDEX
 
-    public static void ddmIndex(WebElement ddm,int index){
-        Select select= new Select(ddm);
+    public static void ddmIndex(WebElement ddm, int index) {
+        Select select = new Select(ddm);
         select.selectByIndex(index);
     }
     //DropDownVALUE
 
-    public static void ddmValue(WebElement ddm,String value){
-        Select select= new Select(ddm);
+    public static void ddmValue(WebElement ddm, String value) {
+        Select select = new Select(ddm);
         select.selectByValue(value);
     }
+
     //SwicthToWindow
-    public static void switchToWindow(int zahl){
-        List<String> allesWindowshandel= new ArrayList<String>(driver.getWindowHandles());
+    public static void switchToWindow(int zahl) {
+        List<String> allesWindowshandel = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(allesWindowshandel.get(zahl));
 
     }
@@ -97,7 +101,7 @@ public abstract class TestBase {
     //SwitchToWindow
     /*Das heißt, der Zweck der Methode window(int zahl) besteht darin,
     zwischen Fenstern mit dem angegebenen numerischen Index zu wechseln.*/
-    public static void window(int zahl){
+    public static void window(int zahl) {
         driver.switchTo().window(driver.getWindowHandles().toArray()[zahl].toString());
     }
 /*Die Methode switchToWindow(int zahl) sammelt zunächst die Bezeichner aller verfügbaren
@@ -113,8 +117,6 @@ Fenster zu und wandelt sie mit der Methode toArray() in ein Array um.
  Im Allgemeinen besteht der Unterschied zwischen diesen beiden Methoden darin, wie die verfügbaren Fenster gesammelt werden und welche Methode verwendet wird. Beide dienen
  jedoch demselben grundlegenden Zweck
  und können bei richtiger  Anwendung funktional sein.*/
-
-
 
 
 }
