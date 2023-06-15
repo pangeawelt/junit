@@ -2,6 +2,7 @@ package tag12_ActionClass;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
@@ -20,7 +21,7 @@ public class C04_Actions04 extends TestBase {
         WebElement dropTarget = driver.findElement(By.xpath("//*[@id='droppable']"));
 
         Actions actions = new Actions(driver);
-        actions.dragAndDrop(dragSource,dropTarget).perform();
+        actions.dragAndDrop(dragSource, dropTarget).perform();
         //Source(drag)  source target
 
     }
@@ -55,14 +56,13 @@ public class C04_Actions04 extends TestBase {
 
         Actions actions = new Actions(driver);
         actions.clickAndHold(dragSource).
-                moveByOffset(84,28).
+                moveByOffset(84, 28).
                 release().perform();
         //Verschiebt Webelement an die gewünschte Koordinate  release().perform();
 
+    }
 
 
     }
 
 
-
-}

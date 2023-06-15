@@ -103,5 +103,12 @@ Doppelklick, Rechtsklick, klicken und halten, ziehen und ablegen, über ein Elem
 Umschalt-, Strg- und Alt-Tasten.
 Actions hat viele nützliche Maus- und Tastaturfunktionen*/
 
+##FakerClass
+Faker faker = new Faker();
+Faker.instance(); 
+System.out.println(faker.name().firstName());
 
+##FileEXIT
+boolean existiert = Files.exists(Paths.get(benutzerHome + "/Desktop/logo.jpeg"));
+      
 
