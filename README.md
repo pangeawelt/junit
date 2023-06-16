@@ -109,6 +109,11 @@ Faker.instance();
 System.out.println(faker.name().firstName());
 
 ##FileEXIT
+String benutzerHome = System.getProperty("user.home");
 boolean existiert = Files.exists(Paths.get(benutzerHome + "/Desktop/logo.jpeg"));
-      
+
+##FILEUPLOAD
+//Wenn SendKEYS nicht funktioniert dann kannst du Robot Objekt erreichen.
+//Robot rbt= new Robot();
+//rbt.keyPress();
 

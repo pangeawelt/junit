@@ -3,10 +3,12 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
@@ -34,9 +36,34 @@ public abstract class TestBase {
     @After
     public void tearDown() throws InterruptedException {
         warte(3);
-        driver.close();
+       // driver.quit();
     }
 
+ /*   @After
+    public void tearDown() {
+        try {
+            Thread.sleep(3000); //
+            driver.close(); //
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }*/
+
+   /* @After
+    public void tearDown() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+            Thread.sleep(Duration.ofSeconds(3).toMillis()); //
+            driver.quit(); //
+        } catch (InterruptedException e) {
+            System.out.println("InterruptedException: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }*/
 
     //HARD WAIT METHOD
     public static void warte(int sekunde) {
