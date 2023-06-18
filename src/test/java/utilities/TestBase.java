@@ -3,12 +3,10 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.junit.Test;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -36,7 +34,7 @@ public abstract class TestBase {
     @After
     public void tearDown() throws InterruptedException {
         warte(3);
-       driver.quit();
+        driver.quit();
     }
 
  /*   @After
@@ -144,6 +142,29 @@ Fenster zu und wandelt sie mit der Methode toArray() in ein Array um.
  Im Allgemeinen besteht der Unterschied zwischen diesen beiden Methoden darin, wie die verfügbaren Fenster gesammelt werden und welche Methode verwendet wird. Beide dienen
  jedoch demselben grundlegenden Zweck
  und können bei richtiger  Anwendung funktional sein.*/
+
+    //ExcplicitWAIT
+
+    public void visibleWait(WebElement element, int zahl) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(zahl));
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
+
+    //FluentWAIT
+    public void fluentWait(WebElement element, int zahl) {
+        Wait<WebDriver> wait = new FluentWait<>(driver).
+                withTimeout(Duration.ofSeconds(zahl)).//Fluentwait Zeit max festgelegt.
+                        pollingEvery(Duration.ofSeconds(3)).//jede 3 Sekunden wirdElement  kontrolliert
+                        withMessage("Ingnore Exception").//es ist nicht obligartisch
+                        ignoring(NoSuchElementException.class);
+    }
+
+    //Alert Wait
+    public static void alertWait(int zahl) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(zahl));
+        wait.until(ExpectedConditions.alertIsPresent());
+
+    }
 
 
 }
