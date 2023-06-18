@@ -27,7 +27,7 @@ public class C01_ScreenShot extends TestBase {
 
    String speicherDate=new SimpleDateFormat("_hh_mm_ss_dd.MM.yyyy").format(new Date());
 
-   String screenPath= "test_Output/screenShot" + speicherDate+ ".png";
+   String screenPath= "test_Output/screenShot" + speicherDate+".png";
 
    //zuerst File wo es speichern soll, festlegen
 

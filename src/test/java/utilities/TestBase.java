@@ -1,6 +1,7 @@
 package utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,8 +12,12 @@ import org.openqa.selenium.support.ui.*;
 import static org.junit.Assert.assertEquals;
 
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public abstract class TestBase {
@@ -166,5 +171,30 @@ Fenster zu und wandelt sie mit der Methode toArray() in ein Array um.
 
     }
 
+    //ScreenShot für allesSeite
+    public static void ganzesSeitenbild() {
+        String speicherDate = new SimpleDateFormat("_hh_mm_ss_dd.MM.yyyy").format(new Date());
+        String screenPath = "test_Output/screenShot" + speicherDate + ".png";
+        TakesScreenshot ts = (TakesScreenshot) driver;//casting
+        try {
+            FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE), new File(screenPath));// mit .try fügt trycatchBlog
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
+
+    }
+    //WebElement ScreenShot
+
+    public static  void screenShotWebElement(WebElement element) {
+
+        String speicherDate = new SimpleDateFormat("_hh_mm_ss_dd.MM.yyyy").format(new Date());
+        String screenPath = "test_Output/screenShot" + speicherDate + ".png";
+        try {
+            FileUtils.copyFile(element.getScreenshotAs(OutputType.FILE),new File(screenPath));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
