@@ -141,3 +141,22 @@ Assert.assertTrue(isTextPresent);
 
 -Thread.sleep()
 
+##Exception
+-NoSuchElement
+-TimeOut
+-NullPoint
+-StaleElementReferance
+
+##Screenshot
+
+TakeScreenshot ts=(TakeScreenshot) driver;
+File allesScreen= new File(pathname);
+String screenPath= "target/ScreenShot/screenShot.png"
+//TakeScreenshot Schnitstelle ein Objekt zu erzeugen
+TakesScreenshot ts=(TakesScreenshot) driver;
+//Files.write() ist auch gleich 
+FileUtils.copyFile(ts.getScreenshotAs(OutputType.FILE),new File(screenPath));
+-getScreenshotAs
+
+##
+
