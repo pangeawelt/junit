@@ -27,7 +27,7 @@ public class SogetiBeispiel extends TestBase {
 
         aktionen.sendKeys(Keys.PAGE_DOWN).sendKeys(Keys.PAGE_DOWN).perform();
 
-
+        //Explicit Metot WAIT
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 
         // iframe

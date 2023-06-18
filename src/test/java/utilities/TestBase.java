@@ -36,7 +36,7 @@ public abstract class TestBase {
     @After
     public void tearDown() throws InterruptedException {
         warte(3);
-       // driver.quit();
+       driver.quit();
     }
 
  /*   @After

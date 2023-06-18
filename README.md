@@ -117,3 +117,20 @@ boolean existiert = Files.exists(Paths.get(benutzerHome + "/Desktop/logo.jpeg"))
 //Robot rbt= new Robot();
 //rbt.keyPress();
 
+##Selenium Wait
+-ExplicitWait
+WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(15));
+WebElement helloWordText = wait.until(ExpectedConditions.//ekadar-until
+visibilityOfElementLocated(By.xpath("(//h4)[2]")));
+-FluentWait: ich benutze
+Wait<WebDriver> wait= new FluentWait<>(driver).
+withTimeout(Duration.ofSeconds(30)).//Fluentwait Zeit max festgelegt.
+pollingEvery(Duration.ofSeconds(3)).//jede 3 Sekunden wirdElement  kontrolliert
+withMessage("Ingnore Exception").//es ist nicht obligartisch
+ignoring(NoSuchElementException.class);
+
+
+-ImplicitWait--default
+-ExpectedConditions
+-Thread.sleep()
+
