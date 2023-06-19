@@ -50,5 +50,12 @@ public class C03_ScreenShot extends TestBase {
         window(0);
         ganzesSeitenbild();
     }
+    // Wir nehmen ein Screenshot des Suchergebnisses
+    WebElement ergebnisText2 = driver.findElement(By.xpath("(//*[@class='sg-col-inner'])[1]"));
+    screenShotWebElement(ergebnisText2);
 
+    // Wir wechseln zurück zur Techproeducation-Seite und nehmen ein Screenshot
+    window(0);
+    ganzesSeitenbild();
+}
 }
