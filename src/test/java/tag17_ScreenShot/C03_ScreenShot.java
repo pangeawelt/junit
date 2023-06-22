@@ -1,10 +1,9 @@
 package tag17_ScreenShot;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.TestBase;
 
 public class C03_ScreenShot extends TestBase {
@@ -41,22 +40,22 @@ public class C03_ScreenShot extends TestBase {
 // Wir suchen nach "iPhone" im Suchfeld
         driver.findElement(By.id("twotabsearchtextbox"))
                 .sendKeys("iPhone", Keys.ENTER);
+        //ergebnistext zuzeigen
+        String ergebnis= driver.findElement(By.xpath("//*[@class='a-color-state a-text-bold']")).getText();
 
-// Wir nehmen ein Screenshot des Suchergebnisses
-        WebElement ergebnisText2 = driver.findElement(By.xpath("(//*[@class='sg-col-inner'])[1]"));
-        screenShotWebElement(ergebnisText2);
+        Assert.assertEquals("\"iPhone\"",ergebnis);
 
-// Wir wechseln zurück zur Techproeducation-Seite und nehmen ein Screenshot
-        window(0);
-        ganzesSeitenbild();
+        //klicken erste Ergbenis
+        driver.findElement(By.xpath("//*[@id=\"search\"]/div[1]/div[1]/div/span[1]/div[1]/div[2]/div/div/div/div/div/div/div/div[1]/div/div[2]/div/span/a/div/img")).click();
+       WebElement erstepreis= driver.findElement(By.xpath("(//*[@class='a-offscreen'])[1]"));
+        //*[@class='a-offscreen'])[1]
+        Assert.assertEquals("149,99$",erstepreis);
+
+
+
     }
-    // Wir nehmen ein Screenshot des Suchergebnisses
-    WebElement ergebnisText2 = driver.findElement(By.xpath("(//*[@class='sg-col-inner'])[1]"));
-    screenShotWebElement(ergebnisText2);
 
-    // Wir wechseln zurück zur Techproeducation-Seite und nehmen ein Screenshot
-    window(0);
-    ganzesSeitenbild();
+
+
+
 }
-
-
